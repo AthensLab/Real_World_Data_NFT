@@ -14,7 +14,7 @@ pragma solidity ^0.8.0;
  import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.4/contracts/access/AccessControl.sol";
 
 
-//for testing with truffle - uncomment these lines to run with a local framework
+//@dev: for testing with truffle - uncomment these lines to run with a local framework
 //import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 //import "@openzeppelin/contracts/security/Pausable.sol";
 //import "@openzeppelin/contracts/access/AccessControl.sol";
@@ -33,12 +33,13 @@ contract RealEstate is ERC721, ERC721Burnable, Pausable, AccessControl {
 
 //@dev: sets up three roles: admin, pauser (for security) and minter
 //@dev:admin is also the owner
+//@dev: currently the base URI leads to IPFS
     constructor() public ERC721("NFTulips", "NFT")
     {
       _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
       _setupRole(PAUSER_ROLE, msg.sender);
       _setupRole(MINTER_ROLE, msg.sender);
-      //_setBaseURI("ipfs://");
+      _setBaseURI("ipfs://");
     }
 
 //@dev: pauses the contract in case of an emergency
