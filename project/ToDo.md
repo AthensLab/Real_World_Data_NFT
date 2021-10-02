@@ -13,6 +13,10 @@ https://docs.chain.link/docs/chainlink-keepers/introduction/
 
 
 
+Set up and Acquire Link:
+https://docs.chain.link/docs/acquire-link/
+
+
 
 
 
