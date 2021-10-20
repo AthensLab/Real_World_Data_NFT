@@ -23,7 +23,7 @@ pragma solidity ^0.8.0;
 
 
 //@dev: contract setup with access control
-contract RealEstate is ERC721, ERC721Burnable, Pausable, AccessControl {
+contract RealNFT is ERC721, ERC721Burnable, Pausable, AccessControl {
   bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
   bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
@@ -34,7 +34,7 @@ contract RealEstate is ERC721, ERC721Burnable, Pausable, AccessControl {
 //@dev: sets up three roles: admin, pauser (for security) and minter
 //@dev:admin is also the owner
 //@dev: currently the base URI leads to IPFS
-    constructor() public ERC721("NFTulips", "NFT")
+    constructor() public ERC721("RealNFT", "RFT")
     {
       _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
       _setupRole(PAUSER_ROLE, msg.sender);
